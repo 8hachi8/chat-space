@@ -1,0 +1,71 @@
+.ChatMain
+
+  .ChatMain__group-info
+    .group-name
+      test
+      %ul.member-list
+        Member：
+        %li.member-list__member
+          masa
+    = link_to "#", class: "edit-btn" do
+      Edit
+
+  .ChatMain__message-list
+    .messages
+      .message
+        .message__uper-info
+          .message__uper-info__talker
+            masa
+          .message__uper-info__date
+            2019/11/20(Wed) 17:43:01
+        .message__text
+          おはよう！
+      .message
+        .message__uper-info
+          .message__uper-info__talker
+            masa
+          .message__uper-info__date
+            2019/11/20(Wed) 17:43:01
+        .message__text
+          おはよう！
+      .message
+        .message__uper-info
+          .message__uper-info__talker
+            masa
+          .message__uper-info__date
+            2019/11/20(Wed) 17:43:01
+        .message__text
+          おはよう！
+      .message
+        .message__uper-info
+          .message__uper-info__talker
+            masa
+          .message__uper-info__date
+            2019/11/20(Wed) 17:43:01
+        .message__text
+          おはよう！
+      .message
+        .message__uper-info
+          .message__uper-info__talker
+            masa
+          .message__uper-info__date
+            2019/11/20(Wed) 17:43:01
+        .message__text
+          おはよう！
+      .message
+        .message__uper-info
+          .message__uper-info__talker
+            masa
+          .message__uper-info__date
+            2019/11/20(Wed) 17:43:01
+        .message__text
+          おはよう！
+
+  .ChatMain__message-form
+    %form.ChatMain__message-form__contents
+      .input-box
+        %input.input-box__text{"placeholder": "type a message", "type": "text"}
+        %label.input-box__image
+          %i.far.fa-image
+          %input.input-box__image__file{type: "file"}
+      %input.submit-btn{"name": "commit", "type": "submit", "value": "Send"}
