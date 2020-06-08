@@ -2,70 +2,23 @@
 
   .ChatMain__group-info
     .group-name
-      test
-      %ul.member-list
+      = @group.name
+      .member-list
         Member：
-        %li.member-list__member
-          masa
-    = link_to "#", class: "edit-btn" do
-      Edit
+        %ul
+          - @group.users.each do |user|
+            %li= user.name
+    %li.Edit-btn
+      = link_to 'Edit', edit_group_path(@group.id),class: "Editlink"
 
   .ChatMain__message-list
-    .messages
-      .message
-        .message__uper-info
-          .message__uper-info__talker
-            masa
-          .message__uper-info__date
-            2019/11/20(Wed) 17:43:01
-        .message__text
-          おはよう！
-      .message
-        .message__uper-info
-          .message__uper-info__talker
-            masa
-          .message__uper-info__date
-            2019/11/20(Wed) 17:43:01
-        .message__text
-          おはよう！
-      .message
-        .message__uper-info
-          .message__uper-info__talker
-            masa
-          .message__uper-info__date
-            2019/11/20(Wed) 17:43:01
-        .message__text
-          おはよう！
-      .message
-        .message__uper-info
-          .message__uper-info__talker
-            masa
-          .message__uper-info__date
-            2019/11/20(Wed) 17:43:01
-        .message__text
-          おはよう！
-      .message
-        .message__uper-info
-          .message__uper-info__talker
-            masa
-          .message__uper-info__date
-            2019/11/20(Wed) 17:43:01
-        .message__text
-          おはよう！
-      .message
-        .message__uper-info
-          .message__uper-info__talker
-            masa
-          .message__uper-info__date
-            2019/11/20(Wed) 17:43:01
-        .message__text
-          おはよう！
+    = render @messages
 
   .ChatMain__message-form
-    %form.ChatMain__message-form__contents
-      .input-box
-        %input.input-box__text{"placeholder": "type a message", "type": "text"}
-        %label.input-box__image
-          %i.far.fa-image
-          %input.input-box__image__file{type: "file"}
-      %input.submit-btn{"name": "commit", "type": "submit", "value": "Send"}
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .Form__contents
+        = f.text_field :content, class: 'Form__contents__text', placeholder: 'type a message'
+        = f.label :image, class: 'Form__contents__image' do
+          = icon('far', 'image', class: 'Form__contents__image__icon')
+          = f.file_field :image, class: 'Form__contents__image__file'
+      = f.submit 'Send', class: 'Form__submit-btn'
