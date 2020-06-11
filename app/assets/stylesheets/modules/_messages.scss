@@ -2,13 +2,15 @@
   box-sizing: border-box;
 }
 
-.wrapper {
+.Wrapper {
   display: flex;
   height: 100vh;
 }
 
 .SideBar {
+  color: #ffffff;
   width: 300px;
+<<<<<<< Updated upstream
 
   &__user-name {
     background-color: #253141;
@@ -22,27 +24,47 @@
     background-color: #2f3e51;
     height: calc(100vh - 100px);
   }
+=======
+>>>>>>> Stashed changes
 }
 
-.top-items {
-  height: 20px;
-  width: 260px;
+.LeftHeader {
+  background-color: #253141;
+  height: 100px;
+  padding: 0 20px;
   display: flex;
+<<<<<<< Updated upstream
   justify-content: space-between;
 
   &__name {
     color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-    width: calc(260px - 60px);
+=======
+  align-items: center;
+
+  &__list {
+    height: 20px;
+    width: 260px;
+    display: flex;
+    justify-content: space-between;
   }
 
+  &__userName {
+>>>>>>> Stashed changes
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+<<<<<<< Updated upstream
   &__icons {
     width: 60px;
+=======
+  &__iconList {
+>>>>>>> Stashed changes
     display: flex;
     justify-content: end;
   }
 
+<<<<<<< Updated upstream
   &__btn {
     color: #ffffff;
     list-style: none;
@@ -55,6 +77,33 @@
   font-weight: bold;
   height: 91px;
   padding: 20px 20px 40px 20px;
+=======
+  &__Icon {
+    margin-left: 5px;
+
+    a {
+      font-size: 16px;
+      color: #ffffff;
+    }
+  }
+}
+
+.GroupList {
+  background-color: #2f3e51;
+  height: calc(100vh - 100px);
+  padding: 0 20px;
+  overflow: scroll;
+}
+
+.Group {
+  box-sizing: border-box;
+  padding: 20px 0 40px;
+
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+>>>>>>> Stashed changes
 
   &__name {
     font-size: 15px;
@@ -66,8 +115,9 @@
   }
 }
 
-.ChatMain {
+.Chat {
   width: calc(100vw - 300px);
+<<<<<<< Updated upstream
 
   &__group-info {
     background-color: #ffffff;
@@ -84,27 +134,83 @@
   &__message-form {
     background-color: #d2d2d2;
     height: 90px;
+=======
+}
+
+.RightHeader {
+  height: 100px;
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+
+  &__groupName {
+    color: #333333;
+    font-size: 20px;
+    margin-top: 35px;
+  }
+
+  &__memberList {
+    color: #999999;
+    font-size: 12px;
+    margin-top: 15px;
+    display: flex;
+  }
+
+  &__member {
+    padding-right: 5px;
+  }
+
+  &__editButton {
+    color: #38aef0;
+    height: 40px;
+    width: 72px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin-top: 28px;
+    border: 1px solid #38aef0;
+    display: block;
+
+    a {
+      font-size: 16px;
+      text-decoration: none;
+      color: #38aef0;
+    }
+>>>>>>> Stashed changes
   }
 }
 
-.group-name {
-  color: #333333;
-  font-size: 20px;
-  margin-top: 35px;
-  margin-left: 40px;
+.MessageField {
+  background-color: #fafafa;
+  box-sizing: border-box;
+  padding: 35px 40px 0;
+  height: calc(100vh - 100px - 90px);
+  overflow: scroll;
 }
 
-.member-list {
+.MessageBox {
+  margin-bottom: 46px;
+}
+
+.MessageInfo {
   display: flex;
+<<<<<<< Updated upstream
   color: #999999;
   font-size: 12px;
   margin-top: 15px;
 
   li {
     display: inline-block;
-  }
-}
+=======
 
+  &__userName {
+    color: #434a54;
+    font-size: 16px;
+    font-weight: bold;
+>>>>>>> Stashed changes
+  }
+
+<<<<<<< Updated upstream
 .Edit-btn {
   list-style: none;
   color: #38aef0;
@@ -150,25 +256,57 @@
     font-size: 14px;
 
     &__image {}
+=======
+  &__date {
+    color: #999999;
+    font-size: 12px;
+    padding-left: 10px;
   }
+}
+
+.Message {
+  margin-top: 12px;
+
+  &__content {
+    color: #434a54;
+    font-size: 14px;
+>>>>>>> Stashed changes
+  }
+
+  &__image {
+    height: 300px;
+  }
+}
+
+.Footer {
+  background-color: #d2d2d2;
+  height: 90px;
+  padding: 20px 50px 20px 40px;
+  box-sizing: border-box;
 }
 
 .Form {
   display: flex;
+<<<<<<< Updated upstream
   padding: 20px 40px;
+=======
+  justify-content: space-between;
+>>>>>>> Stashed changes
 
   &__contents {
     width: 100%;
+    background-color: #ffffff;
     position: relative;
-    display: flex;
+  }
 
-    &__text {
-      height: 50px;
-      width: 100%;
-      padding: 0 40px 0 10px;
-      border-style: none;
-    }
+  &__inputContent {
+    height: 50px;
+    width: 100%;
+    padding: 0 45px 0 15px;
+    border: none;
+  }
 
+<<<<<<< Updated upstream
     &__image {
       font-size: 1.3rem;
       position: absolute;
@@ -191,5 +329,32 @@
     color: white;
     border: none;
     cursor: pointer;
+=======
+  &__inputImage {
+    height: 50px;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    
+      font-size: 25px;
+      line-height: 50px;
+    
+  }
+
+  &__submit {
+    height: 50px;
+    width: 100px;
+    padding: 0 30px;
+    margin-left: 15px;
+    background-color: #38aef0;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .Hidden {
+    display: none;
+>>>>>>> Stashed changes
   }
 }
