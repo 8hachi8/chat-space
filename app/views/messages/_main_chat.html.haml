@@ -1,24 +1,24 @@
-.ChatMain
-
-  .ChatMain__group-info
-    .group-name
-      = @group.name
-      .member-list
+.Chat
+  .RightHeader
+    .RightHeader__group
+      .RightHeader__groupName
+        = @group.name
+      %ul.RightHeader__memberList
         Member：
-        %ul
+        %li.RightHeader__member
           - @group.users.each do |user|
-            %li= user.name
-    %li.Edit-btn
-      = link_to 'Edit', edit_group_path(@group.id),class: "Editlink"
+            = user.name
+    %li.RightHeader__editButton
+      = link_to 'Edit', edit_group_path(@group.id)
 
-  .ChatMain__message-list
+  .MessageField
     = render @messages
 
-  .ChatMain__message-form
+  .Footer
     = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .Form__contents
-        = f.text_field :content, class: 'Form__contents__text', placeholder: 'type a message'
-        = f.label :image, class: 'Form__contents__image' do
-          = icon('far', 'image', class: 'Form__contents__image__icon')
-          = f.file_field :image, class: 'Form__contents__image__file'
-      = f.submit 'Send', class: 'Form__submit-btn'
+        = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__inputImage' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'Form__submit'
