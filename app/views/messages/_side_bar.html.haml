@@ -1,17 +1,17 @@
 .SideBar
-  .SideBar__user-name
-    .top-items
-      %h3.top-items__name
+  .LeftHeader
+    .LeftHeader__list
+      %h3.LeftHeader__userName
         = current_user.name
-      %ul.top-items__icons
-        %li.top-items__btn
+      %ul.LeftHeader__iconList
+        %li.LeftHeader__Icon
           = link_to new_group_path do
             = icon('fas', 'edit')
-        %li.top-items__btn
+        %li.LeftHeader__Icon
           = link_to edit_user_path(current_user) do
             = icon('fas', 'cog')
 
-  .SideBar__group-list
+  .GroupList
     - current_user.groups.each do |group|
       .Group
         = link_to group_messages_path(group) do
